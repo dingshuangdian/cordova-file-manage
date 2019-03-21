@@ -1,0 +1,18 @@
+
+
+
+allprojects {
+  repositories {
+    mavenCentral()
+    jcenter()
+    maven { url 'https://jitpack.io' }
+  }
+}
+
+
+dependencies {
+    implementation 'com.github.dingshuangdian:fileexpore:v1.0.3'
+  }
+
+
+

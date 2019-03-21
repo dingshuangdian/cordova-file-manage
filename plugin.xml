@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="cordova-file-manage" version="1.0.0" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+	<name>filemanage</name>
+	<js-module name="filemanage" src="www/filemanage.js">
+		<clobbers target="cordova.filemanage" />
+	</js-module>
+	<platform name="android">
+		<config-file parent="/*" target="res/xml/config.xml">
+			<feature name="filemanage">
+				<param name="android-package" value="filemanage.filemanage" />
+			</feature>
+		</config-file>
+		<config-file parent="/*" target="AndroidManifest.xml">
+			<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+			<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+		</config-file>
+			<config-file target="AndroidManifest.xml" parent="/manifest/application">
+		<provider
+      android:name="android.support.v4.content.FileProvider"
+      android:authorities="${applicationId}.provider"
+      android:exported="false"
+      android:grantUriPermissions="true">
+      <meta-data
+        android:name="android.support.FILE_PROVIDER_PATHS"
+        android:resource="@xml/nnf_provider_paths" />
+    </provider>
+
+
+		</config-file>
+		<source-file src="src/android/filemanage.java" target-dir="src/filemanage" />
+		<resource-file src="src/android/nnf_provider_paths.xml" target="res/xml" />
+		<framework src="src/android/filemanage.gradle" custom="true" type="gradleReference" />
+		
+	</platform>
+</plugin>

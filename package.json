@@ -1,0 +1,14 @@
+{
+  "name": "cordova-file-manage",
+  "version": "1.0.0",
+  "description": "",
+  "cordova": {
+    "id": "cordova-file-manage",
+    "platforms": []
+  },
+  "keywords": [
+    "ecosystem:cordova"
+  ],
+  "author": "",
+  "license": "ISC"
+}
